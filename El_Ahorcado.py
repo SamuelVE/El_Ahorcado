@@ -1,8 +1,9 @@
+wrong_guessed = []
 guessed = []
 correct_ones = 0
-print("------------------EL AHORCADO-------------")
-print("*Patente pendiente por Samuel Vera 2019")
-print("ingrese la dificultad: ")
+print("------------------EL AHORCADO------------- ")
+print("*Patente pendiente por Samuel Vera 2019    ")
+print("ingrese la dificultad:                     ")
 print("(1) FÁCIL       (2) MEDIO       (3) DIFÍCIL")
 
 difficulty = input(">>")
@@ -84,8 +85,8 @@ def attempt_6():
     print(" |-------------     ")
     print(" |            |     ")
     print(" |           ( )    ")
-    print(" |           /| \\  ")
-    print(" |          / |  \\ ")
+    print(" |           /|\\  ")
+    print(" |          / | \\ ")
     print(" |           / \\   ")
     print(" |          /   \\  ")
     print("----                ")
@@ -96,7 +97,7 @@ def attempt_7():
     print(" |            |     ")
     print(" |          _( )_   ")
     print(" |           /|\\   ")
-    print(" |          / |  \\ ")
+    print(" |          / | \\ ")
     print(" |           / \\   ")
     print(" |          /   \\  ")
     print("----                ")
@@ -106,8 +107,8 @@ def winner():
     print(" |-------------     ")
     print(" |            |     ")
     print(" |          (^u^)   ")
-    print(" |           /| \\  ")
-    print(" |          / |  \\ ")
+    print(" |           /|\\  ")
+    print(" |          / | \\ ")
     print(" |           / \\   ")
     print(" |          /   \\  ")
     print("----                ")
@@ -162,11 +163,11 @@ lenght = len(secret_word)
 
 while lifes != 0:
     print("Vidas: " + str(lifes))  #imprime las vidas restantes
-    print(" ".join(guessed))  #muestra las letras que ya han sido introducidas
+    print(" ".join(wrong_guessed))  #muestra las letras que ya han sido introducidas
     get_attempt(difficulty, lifes)   #muestra las etapas del ahorcado
     print("Adivina una letra")
     guess = input(">>")
-    guessed.append(guess)
+
     # -------------------------------------camino positivo
     if guess in secret_word:
         print("muy bien")
@@ -179,6 +180,7 @@ while lifes != 0:
 
     else:
         lifes -= 1
+        wrong_guessed.append(guess)
         print("letra incorrecta")
 
 

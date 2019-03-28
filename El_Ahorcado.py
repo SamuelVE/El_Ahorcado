@@ -25,7 +25,7 @@ elif difficulty == "2":
 elif difficulty == "3":
     lifes = 3
 
-pattern = re.compile(r'[A-Z]?[a-z]+')
+pattern = re.compile(r'[A-Z]+')
 
 while validWord == False:
     print("Ingrese la palabra a adivinar")
@@ -37,6 +37,7 @@ while validWord == False:
     else:
         print("la palabra introducida no es valida")
 
+secret_word = secret_word.lower()
 lenght = len(secret_word)
 guessed = ["_"] * lenght
 
@@ -46,6 +47,7 @@ while lifes != 0:
     Stages.get_attempt(difficulty, lifes)  #muestra las etapas del ahorcado
     print("Adivina una letra")
     guess = input(">> "+" ".join(guessed))
+    guess = guess.lower()
 
     # -------------------------------------camino positivo
     if guess in list(secret_word) and guess not in guessed:
